@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <script src="{% static 'scripts.js' %}"></script>
+    
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" method="post">
+            {% csrf_token %}
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
