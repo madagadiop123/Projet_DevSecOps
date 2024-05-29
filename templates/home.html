@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Dalal ak Jamm si Wakhtane</h1>
+        <nav>
+            <a href="{% url 'login' %}"><button>Se connecter</button></a>
+            <a href="{% url 'inscription' %}"><button>S'inscrire</button></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Participez à la conversation</h2>
+            <p>Connectez-vous avec vos amis et votre famille de manière simple et amusante.</p>
+        </section>
+        <section>
+            <h2>Restez en contact</h2>
+            <p>Ne manquez jamais un moment grâce aux notifications instantanées.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Wakhtane</p>
+    </footer>
+    <script src="{% static 'home.js' %}"></script>
+</body>
+</html>

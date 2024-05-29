@@ -7,22 +7,27 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <script src="{% static 'scripts.js' %}"></script>
-    
+
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Connexion</h2>
         <form id="loginForm" method="post">
             {% csrf_token %}
             <div class="form-control">
-                <label for="username">Username</label>
+                <label for="username">Nom d'utilisateur</label>
                 <input id="username" type="text" name="username" required>
             </div>
             <div class="form-control">
-                <label for="password">Password</label>
+                <label for="password">Mot de passe</label>
                 <input id="password" type="password" name="password" required>
             </div>
-            <button type="submit">Login</button>
+            <div class="form-control">
+                <label for="otp">Code à usage unique</label>
+                <input id="otp" type="text" name="otp" required>
+            </div>
+
+            <button type="submit">Connectez-vous</button>
         </form>
     </div>
     <script src="{% static 'scripts.js' %}"></script>

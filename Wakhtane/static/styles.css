@@ -1,46 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Réinitialisation de la mise en page */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.login-container {
-    width: 300px;
-    padding: 16px;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 100px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+/* Animation de fond */
+@keyframes backgroundAnimation {
+    0% { background-color: #e4e5ef; }
+    50% { background-color: #2c45dc; }
+    100% { background-color: #262222; }
 }
 
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: backgroundAnimation 10s linear infinite;
+}
+
+/* Conteneur de connexion */
+.login-container {
+    width: 320px;
+    padding: 20px;
+    background-color: #fff;
+    margin: 80px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styles du formulaire */
 .form-control {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .form-control label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
 .form-control input {
-    width: 100%;
-    padding: 10px;
+    width: calc(100% - 20px);
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
 }
 
+.form-control input:focus {
+    outline: none;
+    border-color: #f4f6fa;
+}
+
+/* Bouton de connexion */
 button {
     width: 100%;
-    background-color: #5C6BC0;
-    color: white;
+    background-color: #3a70f5;
+    color: #fff;
     border: none;
-    border-radius: 4px;
-    padding: 10px;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #3F51B5;
+    background-color: #3a70f5;
+}
+
+/* Lien vers la page d'inscription */
+.login-container p {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.login-container p a {
+    color: #3a70f5;
+    text-decoration: none;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
 }

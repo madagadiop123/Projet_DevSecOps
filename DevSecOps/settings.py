@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,12 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Wakhtane.apps.WakhtaneConfig',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'two_factor',
-    'django_otp',
-    'django_otp.plugins.otp_static',
+
 ]
 
 MIDDLEWARE = [
@@ -54,8 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'two_factor.middleware.threadlocals.ThreadLocals',
-    'allauth.account.middleware.AccountMiddleware'
+
 ]
 
 ROOT_URLCONF = 'DevSecOps.urls'
@@ -127,7 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -136,5 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TWILIO_ACCOUNT_SID = 'ACb58bfb901c59391861178d11cca7a53d'
 TWILIO_AUTH_TOKEN = '9228ec8b021fadcd753c2297b62b31e5'
 TWILIO_CALLER_ID = '+221776867299'
+
+TWO_FACTOR_CALL_GATEWAY = 'two_factor.gateways.twilio.gateway.Twilio'
+TWO_FACTOR_SMS_GATEWAY = 'two_factor.gateways.twilio.gateway.Twilio'
+TWO_FACTOR_TOTP_TOLERANCE = 300  # Durée de validité des codes (en secondes)
+
 
 
