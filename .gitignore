@@ -22,6 +22,7 @@ media/
 .venv/
 env/
 *.env
+.env
 
 # Ignore les fichiers statiques collectés
 staticfiles/

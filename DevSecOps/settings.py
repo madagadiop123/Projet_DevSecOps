@@ -129,13 +129,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TWILIO_ACCOUNT_SID = 'ACb58bfb901c59391861178d11cca7a53d'
-TWILIO_AUTH_TOKEN = '9228ec8b021fadcd753c2297b62b31e5'
-TWILIO_CALLER_ID = '+221776867299'
 
-TWO_FACTOR_CALL_GATEWAY = 'two_factor.gateways.twilio.gateway.Twilio'
-TWO_FACTOR_SMS_GATEWAY = 'two_factor.gateways.twilio.gateway.Twilio'
-TWO_FACTOR_TOTP_TOLERANCE = 300  # Durée de validité des codes (en secondes)
 
 
 
